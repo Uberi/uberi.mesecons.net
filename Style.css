@@ -83,6 +83,20 @@ a.post {
 	text-decoration: none;
 }
 
+.difficulty {
+	font-size: 1.3em;
+}
+
+.difficulty img {
+	width: auto;
+	height: 1em;
+	display: inline;
+	margin: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
 .entry {
 	width: 100%;
 	border-top: dotted black 1px;
