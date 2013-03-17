@@ -40,7 +40,7 @@ h4 {
 	margin: 0;
 }
 
-img {
+img.picture {
 	width: 30em;
 	display: block;
 	margin: 2em;
@@ -54,7 +54,11 @@ img {
 img.preview {
 	margin: 0;
 	width: 10em;
+	display: block;
 	float: right;
+	-webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 1);
+	-moz-box-shadow: 0 0 1em rgba(0, 0, 0, 1);
+	box-shadow: 0 0 1em rgba(0, 0, 0, 1);
 }
 
 pre {
@@ -90,11 +94,7 @@ a.post {
 .difficulty img {
 	width: auto;
 	height: 1em;
-	display: inline;
 	margin: 0;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
 }
 
 .entry {
