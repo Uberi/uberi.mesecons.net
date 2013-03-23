@@ -27,10 +27,24 @@
 				(3/10)
 			</p>
 			<p>This article assumes you have the <a href="https://github.com/Jeija/minetest-mod-digilines/">Digilines mod</a>, which I generally consider a de facto part of Mesecons. It is still possible to complete it without this mod, but replacing its functionality with fancy wiring is an exercise left to the reader.
-			<p>Have you ever woken up just feeling like you want to abuse some game mechanics? No? Well, how about detect different types of nodes?</p>
+			<p>Have you ever woken up just feeling like you want to abuse some game mechanics? No? Well, how about detecting different types of nodes?</p>
 			<img src="img/Detector.gif" alt="Node detector" class="picture">
 			<p>How did it know the node was sand? Same way it does it below:</p>
 			<img src="img/DetectorAgain.gif" alt="Node detector" class="picture">
+			<p>This machine takes a node, subjects it to some tests, and tells you which one of three different types of nodes it is! What's more, it cleans and resets itself, so all you have to do is add input to the top!</p>
+
+			<h4>Step 1: Design</h4>
+			<p>What should a node detector detect? Well, this one can check for a few things:</p>
+			<ol>
+				<li>Whether a node is transparent, like glass.</li>
+				<li>Whether the node falls when unsupported, like sand.</li>
+				<li>Whether the node is neither tranparent nor falls when unsupported, like cobble</li>
+			</ol>
+			<p>With only two checks, transparency and falling, we can classify a given node into four categories. However, since no node belongs to one of the categories, namely transparent and falling, we effectively have three. This lets us tell the difference between cobble, sand, and glass.</p>
+			<p>How do we check if a node is transparent? Well, a transparent node does not block light, so we can put a light on one side of the node, and check the light level on the other side. If the node blocks the light, the detected light level will be lower, and we know the node is solid. Otherwise, the detected light level is higher and we know the node is transparent.</p>
+			<p>We can check for light levels using solar panels. Solar panels usually only respond to very bright light: direct sunlight, directly beside a torch, or one node away from a lamp:</p>
+			<img src="img/Light.png" alt="Node detector" class="picture">
+			<p>As you can see, when a solid node is blocking the way, the solar panel is off. In contrast, the transparent node allows light through and the solar panel is on.</p>
 
 			<h4>Downloads</h4>
 			<p>All files are available under the same license as this article. The WEM schematics can be loaded using the //load command in <a href="https://github.com/Uberi/MineTest-WorldEdit">WorldEdit</a>.</p>
