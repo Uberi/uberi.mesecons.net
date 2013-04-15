@@ -46,6 +46,7 @@
 			<img src="img/Cell.gif" alt="Tic-tac-toe cell" class="picture">
 			<p>Now to add the control mechanism. We want a nice, simple interface that lets us set the value of any cell. For that, I'm going to set up some Luacontrollers and wire them together with digilines:</p>
 			<img src="img/CellWired.png" alt="Fully wired cell" class="picture">
+			<p>Our Luacontrollers have port A is facing the lightstone, and port C facing the back. If you made it in a different orientation, simply replace the port names with their rotated equivalents. For example, <code>port.b</code> would become <code>port.c</code> in the code if you built the machine 90 degrees clockwise from the orientation used here.</p>
 			<p>The top and bottom Luacontrollers have the following code:</p>
 			<pre data-language="lua">if event.channel == "set11" then
   if event.msg == 1 then

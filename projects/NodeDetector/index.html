@@ -70,6 +70,7 @@
 			<p>So far you've probably been scanning these nodes by firing those pistons manually. Well, that's not very useful, is it? We can probably tell what kind of node it is by ourselves. But this device becomes a lot more useful when automated. Let's begin with my favourite tool for that, the Luacontroller:</p>
 			<img src="img/Detector5.png" alt="Controller attached to scanner" class="picture">
 			<p>Here I've wired the Luacontroller ports to the two sets of pistons, as well as the outputs of the two solar panels. In order to be able to send a signal that starts the scanning process, I've also attached a digiline to send these signals on and receive scan results from.</p>
+			<p>You'll notice that port C is facing the pistons, and port D is facing the solar panels. If you built it in a different orientation, simply replace the port names with their rotated equivalents. For example, <code>port.b</code> would become <code>port.c</code> in the code if you built the machine 90 degrees clockwise from the orientation used here.</p>
 			<p>Now to program it. We want to send a signal on the digiline, and have the Luacontroller do a number of things:</p>
 			<ol>
 				<li>Fire the two pistons that clear the machine and push in the new node to be scanned.</li>

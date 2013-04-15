@@ -49,7 +49,8 @@
 			<img src="img/Display.png" alt="Clock display" class="picture">
 			<p>Well this is a nice display and all, but there's one big problem with it - it doesn't display anything! Let's remedy that situation:</p>
 			<img src="img/WiredDisplay.png" alt="Wired displays" class="picture">
-			<p>Each digit display has been wired up to a standard seven segment driver supporting the digits 0-9, since that's all we really need. For the sake of completeness, here is the code inside each Luacontroller on the leftmost display (the ones column of the minutes):</p>
+			<p>Each digit display has been wired up to a standard seven segment driver supporting the digits 0-9, since that's all we really need. Note that port A faces the lightstone and port C faces the camera in the image above. While the machine can be built in any orientation, I will assume we are using the one shown. Changing the Luacontroller code to work with other orientations is an exercise left for the reader.</p>
+			<p>For the sake of completeness, here is the code inside each Luacontroller on the leftmost display (the ones column of the minutes):</p>
 			<p>Top:</p>
 			<pre data-language="lua">if event.type == "program" then
   mem.accept = {[0]=true, [2]=true, [3]=true, [5]=true, [6]=true, [7]=true, [8]=true, [9]=true}
